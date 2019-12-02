@@ -2,11 +2,11 @@ import { combineReducers } from 'redux';
 import { firestoreReducer } from 'redux-firestore'; // syncing firestore
 import { firebaseReducer } from 'react-redux-firebase';
 import authReducer from './authReducer';
-import todoListReducer from './todoListReducer';
+import wireFrameReducer from './wireFrameReducer';
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  todoList: todoListReducer,
+  wireFrame: wireFrameReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer,
 });
