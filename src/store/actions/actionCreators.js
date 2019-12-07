@@ -30,16 +30,16 @@ export function logoutSuccess() {
     return { type: 'LOGOUT_SUCCESS' }
 };
 
-// THESE CREATORS MAKE ACTIONS FOR ASYNCHRONOUS TODO LIST UPDATES
-export function createTodoList(todoList) {
+// THESE CREATORS MAKE ACTIONS FOR ASYNCHRONOUS WIREFRAME UPDATES
+export function createWireframe(wireframe) {
     return {
-        type: 'CREATE_TODO_LIST',
-        todoList
+        type: 'CREATE_WIREFRAME',
+        wireframe
     }
 }
-export function createTodoListError(error) {
+export function createWireframeError(error) {
     return {
-        type: 'CREATE_TODO_LIST_ERROR',
+        type: 'CREATE_WIREFRAME_ERROR',
         error
     }
 }
