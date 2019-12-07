@@ -32,9 +32,9 @@ div.banner {
   padding-bottom: 5%;
 }
 
-.home_new_list_button {
+.home_new_wireframe_button {
   font-size: 32pt;
 }
-.home_new_list_button:hover {
+.home_new_wireframe_button:hover {
   box-shadow: 1px 2px;
 }

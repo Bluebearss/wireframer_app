@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { firestoreConnect } from 'react-redux-firebase';
-import TodoListLinks from './TodoListLinks'
+import WireframeLinks from './WireframeLinks'
 
 class HomeScreen extends Component {
 
@@ -16,18 +16,18 @@ class HomeScreen extends Component {
             <div className="dashboard container">
                 <div className="row">
                     <div className="col s12 m4">
-                        <TodoListLinks />
+                        <WireframeLinks />
                     </div>
 
                     <div className="col s8">
                         <div className="banner">
-                            @todo<br />
-                            List Maker
+                            Wireframe<br />
+                            App
                         </div>
                         
-                        <div className="home_new_list_container">
-                                <button className="home_new_list_button" onClick={this.handleNewList}>
-                                    Create a New To Do List
+                        <div className="home_new_wireframe_container">
+                                <button className="home_new_wireframe_button" onClick={this.handleNewWireframe}>
+                                    Create New Wireframe
                                 </button>
                         </div>
                     </div>
