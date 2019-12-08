@@ -46,6 +46,6 @@ const mapStateToProps = (state) => {
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-      { doc: 'users/wireframes' },
+      { collection: 'users' },
     ]),
 )(HomeScreen);

@@ -24,6 +24,6 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-        { doc: 'users/wireframes' },
+        { collection: 'users' },
     ]),
 )(WireframeControls);

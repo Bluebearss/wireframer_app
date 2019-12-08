@@ -89,7 +89,7 @@
             "wireframes": [
                 {
                     "key": 0,
-                    "name": "Happy Paining For Kids",
+                    "name": "Happy Painting For Kids",
                     "width": 2250,
                     "height": 1500,
                     "created": "2016-02-12T03:05:44.327Z",
@@ -120,7 +120,7 @@
                             "key": 2,
                             "x_coordinate": 20,
                             "y_coordinate": 40,
-                            "text": "Leave Happy Paining?",
+                            "text": "Leave Happy Painting?",
                             "font_size": 14,
                             "background_color": "orange",
                             "border_color": "yellow",

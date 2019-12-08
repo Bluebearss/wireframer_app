@@ -22,8 +22,8 @@ class WireframeLinks extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        wireFrames: state.firestore.ordered.wireframes,
         auth: state.firebase.auth,
+        wireframes: state.firestore.ordered.users,
     };
 };
 
