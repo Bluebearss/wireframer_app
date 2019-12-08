@@ -66,6 +66,6 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'todoLists' },
+    { doc: 'users/wireframes' },
   ]),
 )(EditScreen);
