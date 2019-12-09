@@ -57,9 +57,9 @@ class EditScreen extends Component {
                 <div className = "wireframeEditor">
                     <div className = "wireframeFinalize">
                         <img alt="zoomin" src = {zoomin}/>
-                        <img alt="zoomout" src = {zoomout} />
-                        <button>Save</button>
-                        <button>Close</button>
+                        <img alt="zoomout" className="zoomout" src = {zoomout} />
+                        <button className="save-button">Save</button>
+                        <button className="close-button">Close</button>
                     </div>
                     <div>
                         <div>Height: <input type="number"></input></div>
