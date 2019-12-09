@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
-import { registerHandler } from '../../store/database/asynchHandler'
+import { registerHandler } from '../../store/database/asynchHandler';
 
 class RegisterScreen extends Component {
   state = {

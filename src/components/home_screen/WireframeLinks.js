@@ -10,8 +10,9 @@ class WireframeLinks extends React.Component {
         console.log(wireframes);
         return (
             <div className="wireframes section">
-                {wireframes && wireframes.map(wireframe => (
-                    <Link to={'/wireFrame/' + wireframe.id} key={wireframe.id}>
+                <div className="center-align">Recent Work</div>
+                {wireframes && wireframes.map((wireframe, index) => (
+                    <Link to={'/wireFrame/' + index} key={wireframe.id}>
                         <WireframeCard wireframe={wireframe} />
                     </Link>
                 ))}
@@ -23,7 +24,7 @@ class WireframeLinks extends React.Component {
 const mapStateToProps = (state) => {
     return {
         auth: state.firebase.auth,
-        wireframes: state.firestore.ordered.users,
+        wireframes: state.firebase.profile.wireframes,
     };
 };
 

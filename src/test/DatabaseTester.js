@@ -13,25 +13,35 @@ class DatabaseTester extends React.Component {
         fireStore.collection('users').get().then(function(querySnapshot){
             querySnapshot.forEach(function(doc) {
                 console.log("deleting " + doc.id);
-                fireStore.collection('users').doc(doc.id).delete();
+                fireStore.collection('users').doc(doc.id).update({
+                    wireframes: []
+                }).then(() => {
+                    console.log("Database has been cleared.");
+                }).catch((err) => {
+                    console.log(err);
+                });
             })
         });
     }
 
     handleReset = () => {
         const fireStore = getFirestore();
-        wireframeJson.users.forEach(wireframeJson => {
-            fireStore.collection('users').add({
-                firstName: wireframeJson.firstName,
-                lastName: wireframeJson.lastName,
-                initials: wireframeJson.initials,
-                email: wireframeJson.email,
-                wireframes: wireframeJson.wireframes
-                }).then(() => {
-                    console.log("DATABASE RESET");
-                }).catch((err) => {
-                    console.log(err);
+        fireStore.collection('users').get().then(function(querySnapshot){
+            querySnapshot.forEach(function(doc){
+                console.log("Clearing the user: " + doc.id);
+                wireframeJson.users.forEach(aWireframeJson =>{
+                    if (doc.data().email === aWireframeJson.email){
+                        fireStore.collection('users').doc(doc.id).update({
+                            isAdmin: aWireframeJson.isAdmin,
+                            wireframes: aWireframeJson.wireframes,
+                        }).then(() => {
+                            console.log("Database has been reset.");
+                        }).catch((err) => {
+                            console.log(err);
+                        });
+                    }
                 });
+            })
         });
     }
 
