@@ -53,48 +53,55 @@ class EditScreen extends Component {
             </div>
             */
            
-            <div className="card z-depth-0 wireframer">
-                <div className = "wireframeEditor">
-                    <div className = "wireframeFinalize">
+            <div className="card z-depth-0 wireframe_editor">
+                <div className="wireframe-controls">
+                    <div className="wireframe-resize-save">
                         <img alt="zoomin" src = {zoomin}/>
                         <img alt="zoomout" className="zoomout" src = {zoomout} />
                         <button className="save-button">Save</button>
                         <button className="close-button">Close</button>
                     </div>
-                    <div>
-                        <div>Height: <input type="number"></input></div>
-                        <div>Width: <input type="number"></input></div>
+                    <div className="height-width-container">
+                        Height:
+                        <input type="number"></input>
+                        Width:
+                        <input type="number"></input>
                     </div>
-                    <div>
-                        <button><div className = "container_wireframe"></div></button>
-                        <div>Container </div>
-                    </div>
-                    <div>
-                        <button><label>Label</label></button>
-                        <div>Label </div>
-                    </div>
-                    <div>
-                        <button><button>Button</button></button>
-                        <div>Button </div>
-                    </div>
-                    <div>
-                        <button> <input type = "text"></input> </button>
-                        <div>Textfield </div>
+                    <div className="controls_container">
+                        <div>
+                            <button className = "container_control_button"><div className="container_control"></div></button>
+                            <div className="center-align">Container </div>
+                        </div>
+                        <br /><br />
+                        <div>
+                            <button className = "label_control_button"><label className="label_control">Prompt for Input:</label></button>
+                            <div className="center-align">Label </div>
+                        </div>
+                        <br /><br />
+                        <div>
+                            <button className="button_control">Submit</button>
+                            <div className="center-align">Button </div>
+                        </div>
+                        <br /><br />
+                        <div>
+                            <button className = "textfield_control_button"><input type="text" placeholder="Input" className="text_control"></input></button>
+                            <div className="center-align">Textfield </div>
+                        </div>
                     </div>
                 </div>
 
-                <div className = "wireframeCanvas">
+                <div className = "wireframe-canvas">
                 <div>
                 </div>
                 </div>
 
-                <div className = "controls">
-                    <div>Properties: </div>
-                    <div> Font Size: <input type="number"></input></div>
-                    <div> Font Color: <input type="color"></input></div>
-                    <div> Background Color: <input type="color"></input></div>
-                    <div> Border Color: <input type="color"></input></div>
-                    <div> Border Thickness: <input type="number"></input></div>
+                <div className = "control-edit-properties">
+                    <div>Properties </div><br />
+                    <div> Font Size: <input type="number"></input></div><br />
+                    <div> Font Color: <input type="color" className="color-picker"></input></div><br />
+                    <div> Background: <input type="color" className="color-picker"></input></div><br />
+                    <div> Border Color: <input type="color" className="color-picker"></input></div><br />
+                    <div> Border Thickness: <input type="number"></input></div><br />
                     <div> Border Radius: <input type="number"></input></div>
                 </div>
             </div>

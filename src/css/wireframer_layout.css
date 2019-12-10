@@ -21,8 +21,31 @@ body {
 }
 
 div.banner {
-  padding: 20px;
   margin-top: 60px;
+}
+
+.login-container, .register-container, .dashboard
+{
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 12%;
+}
+
+.login-form, .register-form, .link-cards
+{
+  margin-top: 0px;
+}
+
+.wireframe-links-title
+{
+  padding-left: 15px;
+  margin-top: -23px;
+}
+
+.home_new_wireframe_container
+{
+  margin-left: 48%;
+  margin-top: 25px;
 }
 
 form {
@@ -34,24 +57,30 @@ form button, form h5 {
   margin: 20px 0;
 }
 
-.wireframer {
+.wireframe_editor {
   position: relative;
-  height: 475px;
+  height: 790px;
   grid-row-gap: 0px;
   grid-column-gap: 50px;
-  margin-top: 0px;
+  margin-top: 10px;
   margin-bottom: 5px;
   border-radius: 5px;
+  font-size: 14pt;
 }
 
-.wireframeEditor 
+.controls_container
+{
+  padding: 30px;
+}
+
+.wireframe-controls 
 {
   position: absolute;
   height:100%;
   width: 20%;
 }
 
-.wireframeCanvas 
+.wireframe-canvas 
 {
   position: absolute;
   height:100%;
@@ -59,7 +88,7 @@ form button, form h5 {
   width: 60%;
 }
 
-.controls 
+.control-edit-properties 
 {
   position: absolute;
   height:100%;
@@ -67,10 +96,51 @@ form button, form h5 {
   left: 80%;
 }
 
-.container_wireframe 
+.container_control_button, .label_control_button, .textfield_control_button
 {
-  height:50px;
-  width:150px;
+  background-color: white;
+  border-style: none;
+}
+
+.container_control_button
+{
+  margin-left: 20px;
+}
+
+.container_control 
+{
+  height:60px;
+  width:120px;
+  border-radius: 5px;
+}
+
+.label_control
+{
+  font-size: 12pt;
+}
+
+.label_control_button
+{
+  width: 80%;
+  margin-left: 20px;
+}
+
+.button_control
+{
+  width: 80%;
+  margin-left: 20px;
+}
+
+.textfield_control_button
+{
+  padding: 25px;
+  margin-left: 8px;
+}
+
+.color-picker
+{
+  float: right;
+  margin-right: 10px;
 }
 
 img

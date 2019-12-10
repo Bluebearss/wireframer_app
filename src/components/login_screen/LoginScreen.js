@@ -44,12 +44,12 @@ class LoginScreen extends Component {
     }
 
     return (
-      <div className="container">
+      <div className="container login-container">
         <div className="row">
-          <form onSubmit={this.handleSubmit} className="col s4 white">
+          <form onSubmit={this.handleSubmit} className="col s4 white login-form">
             <h5 className="grey-text text-darken-3">Login</h5>
             <div className="input-field">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email Address</label>
               <input className="active" type="email" name="email" id="email" onChange={this.handleChange} />
             </div>
             <div className="input-field">
@@ -57,14 +57,13 @@ class LoginScreen extends Component {
               <input className="active" type="password" name="password" id="password" onChange={this.handleChange} />
             </div>
             <div className="input-field">
-              <button type="submit" className="btn pink lighten-1 z-depth-0">Login</button>
+              <button type="submit" className="btn pink lighten-1 z-depth-0">Submit</button>
               {authError ? <div className="red-text center"><p>{authError}</p></div> : null}
             </div>
           </form>
 
-          <div className="col s8 banner">
-            Wireframer<br />
-            App
+          <div className="banner">
+            Wireframer&#x2122;
           </div>
         </div>
       </div>

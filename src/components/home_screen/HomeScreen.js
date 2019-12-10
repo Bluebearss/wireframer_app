@@ -19,9 +19,9 @@ class HomeScreen extends Component {
                         <WireframeLinks />
                     </div>
 
-                    <div className="col s8">
+                    <div className="">
                         <div className="banner">
-                            Wireframer&#x2122;<br />
+                            Wireframer&#x2122;
                         </div>
                         
                         <div className="home_new_wireframe_container">

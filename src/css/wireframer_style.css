@@ -40,45 +40,101 @@
 }
 
 body {
-  background-color: var(--swatch-foundation);
   font-family: 'Lexend Exa';
 }
 
 div.banner {
   background-image: linear-gradient(to bottom,         
   #b8b808, #636723);
-  color: white;
-  font-size: 48pt;
+  color: black;
+  font-size: 46pt;
   border-color: black;
   border-width: 2px;
   border-style: solid;
   border-radius: 10px;
-  padding-left: 10%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  width: 110%;
+  width: 55%;
+  margin-left: 40%;
+  padding-top: 15px;
+  text-align: center;
+  padding-bottom: 28%;
+}
+
+.wireframe-links-title
+{
+  font-size: 26pt;
+  font-weight: bold;
+}
+
+.wireframe-card-name
+{
+  text-decoration: underline;
 }
 
 .home_new_wireframe_button {
   font-size: 32pt;
+  font-weight: 550;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  width: 80%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .home_new_wireframe_button:hover {
   box-shadow: 1px 2px;
 }
 
-.wireframeEditor, .wireframeCanvas, .controls, .wireframeFinalize, .container_wireframe
+.wireframe-canvas, .container_control, .login-container, .register-container, .dashboard
 {
   border-color: black;
   border-style: solid;
+  border-width: medium;
 }
 
-.container_wireframe
+.control-edit-properties
+{
+  border-top-color: black;
+  border-right-color: black;
+  border-bottom-color: black;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-top-width: medium;
+  border-right-width: medium;
+  border-bottom-width: medium;
+}
+
+.wireframe-resize-save, .height-width-container
+{
+  border-top-color: black;
+  border-left-color: black;
+  border-top-style: solid;
+  border-left-style: solid;
+  border-top-width: medium;
+  border-left-width: medium;
+}
+
+.controls_container
+{
+  border-top-color: black;
+  border-left-color: black;
+  border-bottom-color: black;
+  border-top-style: solid;
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-top-width: medium;
+  border-left-width: medium;
+  border-bottom-width: medium;
+}
+
+.container_control
 {
   background-color:white;
 }
 
-.wireframeFinalize, .save-button, .close-button
+.wireframe-resize-save, .save-button, .close-button
 {
   background-color: var(--swatch-foundation);
 }
