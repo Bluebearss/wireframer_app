@@ -11,7 +11,10 @@ export const REGISTER_ERROR = 'REGISTER_ERROR';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
-
+export const CREATE_WIREFRAME_SUCCESS = 'CREATE_WIREFRAME_SUCCESS';
+export const CREATE_WIREFRAME_ERROR = 'CREATE_WIREFRAME_ERROR';
+export const DELETE_WIREFRAME_SUCCESS = 'DELETE_WIREFRAME_SUCCESS';
+export const DELETE_WIREFRAME_ERROR = 'DELETE_WIREFRAME_ERROR';
 // THESE CREATORS MAKE ACTIONS ASSOCIATED WITH USER ACCOUNTS
 
 export function registerSuccess() {
@@ -31,15 +34,25 @@ export function logoutSuccess() {
 };
 
 // THESE CREATORS MAKE ACTIONS FOR ASYNCHRONOUS WIREFRAME UPDATES
-export function createWireframe(wireframe) {
+export function createWireframeSuccess() {
     return {
-        type: 'CREATE_WIREFRAME',
-        wireframe
+        type: 'CREATE_WIREFRAME_SUCCESS'
     }
 }
 export function createWireframeError(error) {
     return {
         type: 'CREATE_WIREFRAME_ERROR',
+        error
+    }
+}
+export function deleteWireframeSuccess() {
+    return {
+        type: 'DELETE_WIREFRAME_SUCCESS'
+    }
+}
+export function deleteWireframeError(error) {
+    return {
+        type: 'DELETE_WIREFRAME_ERROR',
         error
     }
 }

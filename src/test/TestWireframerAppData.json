@@ -6,7 +6,7 @@
             "lastName": "Harvey",
             "initials": "SH",
             "email": "familyfeudboss@gmail.com",
-            "isAdmin": true,
+            "isAdmin": false,
             "wireframes": [
                 {
                     "key": 0,
@@ -102,7 +102,7 @@
             "lastName": "Ross",
             "initials": "BR",
             "email": "happytrees@gmail.com",
-            "isAdmin": false,
+            "isAdmin": true,
             "wireframes": [
                 {
                     "key": 0,

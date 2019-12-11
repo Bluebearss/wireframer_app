@@ -56,7 +56,7 @@ class EditScreen extends Component {
             <div className="card z-depth-0 wireframe_editor">
                 <div className="wireframe-controls">
                     <div className="wireframe-resize-save">
-                        <img alt="zoomin" src = {zoomin}/>
+                        <img alt="zoomin" className="zoomin" src = {zoomin}/>
                         <img alt="zoomout" className="zoomout" src = {zoomout} />
                         <button className="save-button">Save</button>
                         <button className="close-button">Close</button>

@@ -176,6 +176,18 @@ img
   right: 3px;
 }
 
+.card-delete-button
+{
+  margin-left: 105%;
+  margin-top: -25%;
+  font-size: 20pt;
+}
+
+.card-delete-button:hover
+{
+  cursor: pointer;
+}
+
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),

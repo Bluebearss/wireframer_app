@@ -35,3 +35,48 @@ export const registerHandler = (newUser, firebase) => (dispatch, getState, { get
         dispatch(actionCreators.registerError);
     });
 };
+
+export const newWireframeHandler = (profile, firebase) => (dispatch, getState, { getFirestore }) => {
+  const fireStore = getFirestore();
+  fireStore.collection('users').doc(profile.uid).get().then(function(doc) {
+    if (doc.exists) {
+      var user_wireframes = doc.data().wireframes;
+      var new_wireframe = {
+        key: user_wireframes.length,
+        name: "Unknown",
+        height: 1500,
+        width: 2250,
+        created: new Date(),
+        controls: []
+      }
+      user_wireframes.unshift(new_wireframe);
+      
+      fireStore.collection('users').doc(doc.id).update({
+        wireframes: user_wireframes
+      }).then((doc)=>{
+        dispatch(actionCreators.createWireframeSuccess(doc))
+        console.log(doc);
+        console.log(getState);
+      }).catch((err)=>{
+        dispatch(actionCreators.createWireframeError(err))
+      });
+    }
+    else {
+      console.log("There is no document.");
+    }
+  }).catch(function(err) {
+    console.log("Document Error: ", err);
+  });
+};
+export const deleteWireframeHandler = (profile, wireframe, firebase) => (dispatch, getState, { getFirestore }) => {
+  const fireStore = getFirestore();
+  fireStore.collection('users').doc(profile.uid).update({
+    wireframes: wireframe
+  }).then((doc)=>{
+    dispatch(actionCreators.deleteWireframeSuccess(doc))
+    console.log(doc);
+    console.log(getState);
+  }).catch((err)=>{
+    dispatch(actionCreators.deleteWireframeError(err))
+  });
+};

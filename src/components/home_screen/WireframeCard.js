@@ -1,7 +1,6 @@
 import React from 'react';
 
 class WireframeCard extends React.Component {
-
     render() {
         const { wireframe } = this.props;
         console.log(wireframe);
@@ -9,7 +8,7 @@ class WireframeCard extends React.Component {
         return (
             <div className="card z-depth-0 wireframe-link">
                 <div className="card-content blue-text text-darken-2 ">
-                    <span className="card-title wireframe-card-name">{wireframe.name}</span>
+                    <span className="card-title wireframe-card-name">{wireframe.name}</span>         
                 </div>
             </div>
         );
