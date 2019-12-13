@@ -15,6 +15,10 @@ const wireFrameReducer = (state = initState, action) => {
             return state;
         case actionCreators.DELETE_WIREFRAME_ERROR:
             return state;
+        case actionCreators.PREPEND_WIREFRAME_SUCCESS:
+            return state;
+        case actionCreators.PREPEND_WIREFRAME_ERROR:
+            return state;
         default:
             return state;
     }

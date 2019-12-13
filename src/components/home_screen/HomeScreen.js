@@ -11,8 +11,7 @@ class HomeScreen extends Component {
     handleNewWireframe(){
         const { props } = this;
         const { firebase, profile } = props;
-        let newWireframe = props.createNewWireframe(profile, firebase);
-        console.log("Created a new Wireframe: ", newWireframe);
+        props.createNewWireframe(profile, firebase);
         this.props.history.push('/wireFrame/0');
     }
 
@@ -25,7 +24,7 @@ class HomeScreen extends Component {
             <div className="dashboard container">
                 <div className="row">
                     <div className="col s12 m4">
-                        <WireframeLinks />
+                        <WireframeLinks goHome={this.goHome} />
                     </div>
 
                     <div className="">
@@ -48,7 +47,8 @@ class HomeScreen extends Component {
 const mapStateToProps = (state) => {
     return {
         profile: state.firebase.auth,
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        wireframes: state.firebase.profile.wireframes,
     };
 };
 

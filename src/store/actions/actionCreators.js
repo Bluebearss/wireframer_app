@@ -15,6 +15,8 @@ export const CREATE_WIREFRAME_SUCCESS = 'CREATE_WIREFRAME_SUCCESS';
 export const CREATE_WIREFRAME_ERROR = 'CREATE_WIREFRAME_ERROR';
 export const DELETE_WIREFRAME_SUCCESS = 'DELETE_WIREFRAME_SUCCESS';
 export const DELETE_WIREFRAME_ERROR = 'DELETE_WIREFRAME_ERROR';
+export const PREPEND_WIREFRAME_SUCCESS = 'PREPEND_WIREFRAME_SUCCESS';
+export const PREPEND_WIREFRAME_ERROR = 'PREPEND_WIREFRAME_ERROR';
 // THESE CREATORS MAKE ACTIONS ASSOCIATED WITH USER ACCOUNTS
 
 export function registerSuccess() {
@@ -53,6 +55,17 @@ export function deleteWireframeSuccess() {
 export function deleteWireframeError(error) {
     return {
         type: 'DELETE_WIREFRAME_ERROR',
+        error
+    }
+}
+export function prependWireframeSuccess() {
+    return {
+        type: 'PREPEND_WIREFRAME_SUCCESS'
+    }
+}
+export function prependWireframeError(error) {
+    return {
+        type: 'PREPEND_WIREFRAME_ERROR',
         error
     }
 }

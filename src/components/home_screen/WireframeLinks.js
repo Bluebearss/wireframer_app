@@ -7,13 +7,22 @@ import { Modal } from 'react-materialize';
 import WireframeCard from './WireframeCard';
 
 class WireframeLinks extends React.Component {
-    handleDeleteWireframe = (e) => {
+    handleDeleteWireframe = (wireframe, e) => {
         e.preventDefault();
 
         const { props } = this;
         const { firebase, profile } = props;
         const { wireframes } = this.props;
-        wireframes.splice(this.props.index, 1);
+        var index = 0;
+        for (var i = 0; i < wireframes.length; i++)
+        {
+            if (wireframes[i] === wireframe)
+            {
+                index = i;
+            }
+        }
+        
+        wireframes.splice(index, 1);
         props.deleteWireframe(profile, wireframes, firebase);
     }
 
@@ -27,14 +36,14 @@ class WireframeLinks extends React.Component {
                 {wireframes && wireframes.map((wireframe, index) => (
                     <div>
                         <Link to={'/wireFrame/' + index} key={wireframe.id}>
-                            <WireframeCard index={index} wireframe={wireframe} />
+                            <WireframeCard wireframe={wireframe} />
                         </Link>
                         <Modal className = "modal_container" header="Hello User!" trigger={x_button}>
                             Delete Wireframe?<br /><br /><br />
                             <div className= "modal_text">Are you sure you want to delete this Wireframe?</div>
-                            <div>If not, click the Close Button below.</div>
+                            <div>If not, click the Close Button.</div>
                             <br /><br />
-                            <button className = "modal_yes_button" onClick = {this.handleDeleteWireframe}>
+                            <button className = "waves-effect waves-green btn-flat blue lighten-3 modal_yes_button" onClick = {this.handleDeleteWireframe.bind(this, wireframe)}>
                                 Yes
                             </button><br /><br />
                             

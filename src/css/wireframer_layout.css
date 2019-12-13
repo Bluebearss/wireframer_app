@@ -183,6 +183,18 @@ img
   font-size: 20pt;
 }
 
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat
+{
+  margin-top: -24%;
+  margin-right: 80%;
+  background-color: red;
+}
+
+.modal_yes_button:hover, .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat:hover
+{
+  box-shadow: 1px 2px;
+}
+
 .card-delete-button:hover
 {
   cursor: pointer;

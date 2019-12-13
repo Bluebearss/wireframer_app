@@ -7,10 +7,11 @@ import ControlEditContainer from './ControlEditContainer.js'
 import { firestoreConnect } from 'react-redux-firebase';
 import zoomin from '../../css/images/zoomin.png';
 import zoomout from '../../css/images/zoomout.png';
+import { prependWireframeHandler } from '../../store/database/asynchHandler';
 
 class EditScreen extends Component {
     state = {
-        name: '',
+        name: this.props.wireframe === undefined ? '' : this.props.wireframe.name,
         width: '',
         height: '',
     }
@@ -22,6 +23,22 @@ class EditScreen extends Component {
             ...state,
             [target.id]: target.value,
         }));
+    }
+
+    componentDidMount = () => {
+        const { props } = this;
+        const { firebase, profile } = props;
+        const { id } = this.props;
+        var { wireframe } = this.props;
+        if (id !== '0')
+        {
+            props.prependWireframe(profile, id, firebase);
+        }
+        
+        var wireframe_height = document.getElementById("height");
+        var wireframe_width = document.getElementById("width");
+        wireframe_height.value = wireframe.height;
+        wireframe_width.value = wireframe.width;
     }
 
     render() {
@@ -63,9 +80,9 @@ class EditScreen extends Component {
                     </div>
                     <div className="height-width-container">
                         Height:
-                        <input type="number"></input>
+                        <input type="number" id="height"></input>
                         Width:
-                        <input type="number"></input>
+                        <input type="number" id="width"></input>
                     </div>
                     <div className="controls_container">
                         <div>
@@ -112,7 +129,6 @@ class EditScreen extends Component {
 const mapStateToProps = (state, ownProps) => {
   const { id } = ownProps.match.params;
   const wireframes = state.firebase.profile.wireframes;
-  console.log(wireframes);
   const wireframe = wireframes ? wireframes[id] : null;
   
   if (wireframe)
@@ -122,12 +138,19 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     wireframe,
+    wireframes,
+    id,
+    profile: state.firebase.auth,
     auth: state.firebase.auth,
   };
 };
 
+const mapDispatchToProps = (dispatch) => ({
+    prependWireframe: (profile, id, firebase) => dispatch(prependWireframeHandler(profile, id, firebase))
+});
+
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: 'users' },
   ]),

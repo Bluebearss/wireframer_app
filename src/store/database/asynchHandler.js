@@ -80,3 +80,29 @@ export const deleteWireframeHandler = (profile, wireframe, firebase) => (dispatc
     dispatch(actionCreators.deleteWireframeError(err))
   });
 };
+export const prependWireframeHandler = (profile, id, firebase) => (dispatch, getState, { getFirestore }) => {
+  const fireStore = getFirestore();
+  fireStore.collection('users').doc(profile.uid).get().then(function(doc) {
+    if (doc.exists) {
+      var user_wireframes = doc.data().wireframes;
+      var temp = user_wireframes[id];
+      user_wireframes.splice(id, 1);
+      user_wireframes.unshift(temp);
+
+      fireStore.collection('users').doc(doc.id).update({
+        wireframes: user_wireframes
+      }).then((doc)=>{
+        dispatch(actionCreators.prependWireframeSuccess(doc))
+        console.log(doc);
+        console.log(getState);
+      }).catch((err)=>{
+        dispatch(actionCreators.prependWireframeError(err))
+      });
+    }
+    else {
+      console.log("There is no document.");
+    }
+  }).catch(function(err) {
+    console.log("Document Error: ", err);
+  });
+};
