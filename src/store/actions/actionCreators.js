@@ -17,6 +17,10 @@ export const DELETE_WIREFRAME_SUCCESS = 'DELETE_WIREFRAME_SUCCESS';
 export const DELETE_WIREFRAME_ERROR = 'DELETE_WIREFRAME_ERROR';
 export const PREPEND_WIREFRAME_SUCCESS = 'PREPEND_WIREFRAME_SUCCESS';
 export const PREPEND_WIREFRAME_ERROR = 'PREPEND_WIREFRAME_ERROR';
+export const SAVE_WORK_SUCCESS = 'SAVE_WORK_SUCCESS';
+export const SAVE_WORK_ERROR = 'SAVE_WORK_ERROR';
+export const UPDATE_WIREFRAME_NAME_SUCCESS = 'UPDATE_WIREFRAME_NAME_SUCCESS';
+export const UPDATE_WIREFRAME_NAME_ERROR = 'UPDATE_WIREFRAME_NAME_ERROR';
 // THESE CREATORS MAKE ACTIONS ASSOCIATED WITH USER ACCOUNTS
 
 export function registerSuccess() {
@@ -66,6 +70,28 @@ export function prependWireframeSuccess() {
 export function prependWireframeError(error) {
     return {
         type: 'PREPEND_WIREFRAME_ERROR',
+        error
+    }
+}
+export function saveWorkSuccess() {
+    return {
+        type: 'SAVE_WORK_SUCCESS'
+    }
+}
+export function saveWorkError(error) {
+    return {
+        type: 'SAVE_WORK_ERROR',
+        error
+    }
+}
+export function updateWireframeNameSuccess() {
+    return {
+        type: 'UPDATE_WIREFRAME_NAME_SUCCESS'
+    }
+}
+export function updateWireframeNameError(error) {
+    return {
+        type: 'UPDATE_WIREFRAME_NAME_ERROR',
         error
     }
 }

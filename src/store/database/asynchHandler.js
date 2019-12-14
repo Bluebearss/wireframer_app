@@ -36,7 +36,7 @@ export const registerHandler = (newUser, firebase) => (dispatch, getState, { get
     });
 };
 
-export const newWireframeHandler = (profile, firebase) => (dispatch, getState, { getFirestore }) => {
+export const newWireframeHandler = (profile, history, firebase) => (dispatch, getState, { getFirestore }) => {
   const fireStore = getFirestore();
   fireStore.collection('users').doc(profile.uid).get().then(function(doc) {
     if (doc.exists) {
@@ -54,6 +54,7 @@ export const newWireframeHandler = (profile, firebase) => (dispatch, getState, {
       fireStore.collection('users').doc(doc.id).update({
         wireframes: user_wireframes
       }).then((doc)=>{
+        history.push('/wireFrame/0');
         dispatch(actionCreators.createWireframeSuccess(doc))
         console.log(doc);
         console.log(getState);
@@ -97,6 +98,42 @@ export const prependWireframeHandler = (profile, id, firebase) => (dispatch, get
         console.log(getState);
       }).catch((err)=>{
         dispatch(actionCreators.prependWireframeError(err))
+      });
+    }
+    else {
+      console.log("There is no document.");
+    }
+  }).catch(function(err) {
+    console.log("Document Error: ", err);
+  });
+};
+export const saveWorkHandler = (profile, wireframes, firebase) => (dispatch, getState, { getFirestore }) => {
+  const fireStore = getFirestore();
+  fireStore.collection('users').doc(profile.uid).update({
+    wireframes: wireframes
+  }).then((doc)=>{
+    dispatch(actionCreators.saveWorkSuccess(doc))
+    console.log(doc);
+    console.log(getState);
+  }).catch((err)=>{
+    dispatch(actionCreators.saveWorkError(err))
+  });
+};
+export const updateWireframeNameHandler = (profile, name, id, firebase) => (dispatch, getState, { getFirestore }) => {
+  const fireStore = getFirestore();
+  fireStore.collection('users').doc(profile.uid).get().then(function(doc) {
+    if (doc.exists) {
+      var user_wireframes = doc.data().wireframes;
+      user_wireframes[id].name = name;
+
+      fireStore.collection('users').doc(doc.id).update({
+        wireframes: user_wireframes
+      }).then((doc)=>{
+        dispatch(actionCreators.updateWireframeNameSuccess(doc))
+        console.log(doc);
+        console.log(getState);
+      }).catch((err)=>{
+        dispatch(actionCreators.updateWireframeNameError(err))
       });
     }
     else {

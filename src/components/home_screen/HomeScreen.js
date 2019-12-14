@@ -11,8 +11,8 @@ class HomeScreen extends Component {
     handleNewWireframe(){
         const { props } = this;
         const { firebase, profile } = props;
-        props.createNewWireframe(profile, firebase);
-        this.props.history.push('/wireFrame/0');
+        const { history } = this.props;
+        props.createNewWireframe(profile, history, firebase);
     }
 
     render() {
@@ -53,7 +53,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    createNewWireframe: (profile, firebase) => dispatch(newWireframeHandler(profile, firebase))
+    createNewWireframe: (profile, history, firebase) => dispatch(newWireframeHandler(profile, history, firebase))
 });
 
 export default compose(
