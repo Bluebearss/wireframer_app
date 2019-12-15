@@ -24,7 +24,7 @@ class HomeScreen extends Component {
             <div className="dashboard container">
                 <div className="row">
                     <div className="col s12 m4">
-                        <WireframeLinks goHome={this.goHome} />
+                        <WireframeLinks goHome={this.goHome} history={this.props.history} />
                     </div>
 
                     <div className="">

@@ -66,11 +66,13 @@ form button, form h5 {
   margin-bottom: 5px;
   border-radius: 5px;
   font-size: 14pt;
+  left: -125px;
 }
 
 .controls_container
 {
   padding: 30px;
+  height: 93.1%;
 }
 
 .wireframe-controls 
@@ -84,15 +86,31 @@ form button, form h5 {
 {
   position: absolute;
   height:100%;
-  left:20%;
+  left:50%;
   width: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-color: black;
+  border-style: solid;
+  z-index: 0;
 }
+
+#draw
+{
+  width: 60%;
+  height: 135%;
+  overflow: auto;
+  transform: scale(1);
+  transform-origin: 0% 0%;
+  scrollbar-width: thin;
+}
+
 
 .control-edit-properties 
 {
   position: absolute;
-  height:100%;
-  width: 20%;
+  height: 135%;
+  width: 40%;
   left: 80%;
 }
 
@@ -137,10 +155,27 @@ form button, form h5 {
   margin-left: 8px;
 }
 
+.font-color-name
+{
+  margin-left: 11%;
+}
+
+.background-name
+{
+  margin-top: -55.9px;
+  padding-left: 59%;
+}
+
 .color-picker
 {
-  float: right;
-  margin-right: 10px;
+  float: left;
+  margin-left: 10px;
+}
+
+.background-color-picker
+{
+  margin-left: 250px;
+  
 }
 
 img
@@ -190,14 +225,52 @@ img
   background-color: red;
 }
 
-.modal_yes_button:hover, .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat:hover
+.border-input-field
+{
+  width: 50% !important;
+  margin-left: 11.8px !important;
+}
+
+.border-name
+{
+  margin-left: 51.4%;
+  margin-top: 0%;
+}
+
+.border-name-1
+{
+  margin-left: 51.4%;
+  margin-top: -11.5%;
+}
+
+#save_modal_container.modal .modal-footer
+{
+  display: none;
+}
+
+.modal_yes_button:hover, .modal_no_button:hover, .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat:hover
 {
   box-shadow: 1px 2px;
+}
+
+.modal_no_button
+{
+  margin-left: 20px;
 }
 
 .card-delete-button:hover
 {
   cursor: pointer;
+}
+
+.canvasContainer {
+  position: absolute;
+  height:100%;
+  left:20%;
+  width: 60%;
+  border-color: black;
+  border-style: solid;
+  border-width: medium;
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]),

@@ -129,6 +129,16 @@ div.banner {
   border-bottom-width: medium;
 }
 
+.name_container
+{
+  border-top-color: black;
+  border-left-color: black;
+  border-top-style: solid;
+  border-left-style: solid;
+  border-top-width: medium;
+  border-left-width: medium;
+}
+
 .container_control
 {
   background-color:white;
@@ -138,7 +148,21 @@ div.banner {
 {
   background-color: var(--swatch-foundation);
 }
+
 .save-button, .close-button
 {
   border: none;
+}
+
+.border
+{
+  border-style: "solid";
+  border-color: black;
+}
+
+.borderimg
+{ 
+  border: 5px solid transparent;
+  padding: 0px;
+  border-image: url('../css/images/border.png') 30 stretch;
 }

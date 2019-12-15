@@ -15,12 +15,10 @@ export const CREATE_WIREFRAME_SUCCESS = 'CREATE_WIREFRAME_SUCCESS';
 export const CREATE_WIREFRAME_ERROR = 'CREATE_WIREFRAME_ERROR';
 export const DELETE_WIREFRAME_SUCCESS = 'DELETE_WIREFRAME_SUCCESS';
 export const DELETE_WIREFRAME_ERROR = 'DELETE_WIREFRAME_ERROR';
-export const PREPEND_WIREFRAME_SUCCESS = 'PREPEND_WIREFRAME_SUCCESS';
-export const PREPEND_WIREFRAME_ERROR = 'PREPEND_WIREFRAME_ERROR';
 export const SAVE_WORK_SUCCESS = 'SAVE_WORK_SUCCESS';
 export const SAVE_WORK_ERROR = 'SAVE_WORK_ERROR';
-export const UPDATE_WIREFRAME_NAME_SUCCESS = 'UPDATE_WIREFRAME_NAME_SUCCESS';
-export const UPDATE_WIREFRAME_NAME_ERROR = 'UPDATE_WIREFRAME_NAME_ERROR';
+export const GO_HOME_SUCCESS = 'GO_HOME_SUCCESS';
+export const GO_HOME_ERROR = 'GO_HOME_ERROR';
 // THESE CREATORS MAKE ACTIONS ASSOCIATED WITH USER ACCOUNTS
 
 export function registerSuccess() {
@@ -62,17 +60,6 @@ export function deleteWireframeError(error) {
         error
     }
 }
-export function prependWireframeSuccess() {
-    return {
-        type: 'PREPEND_WIREFRAME_SUCCESS'
-    }
-}
-export function prependWireframeError(error) {
-    return {
-        type: 'PREPEND_WIREFRAME_ERROR',
-        error
-    }
-}
 export function saveWorkSuccess() {
     return {
         type: 'SAVE_WORK_SUCCESS'
@@ -84,14 +71,14 @@ export function saveWorkError(error) {
         error
     }
 }
-export function updateWireframeNameSuccess() {
+export function goHomeSuccess() {
     return {
-        type: 'UPDATE_WIREFRAME_NAME_SUCCESS'
+        type: 'GO_HOME_SUCCESS'
     }
 }
-export function updateWireframeNameError(error) {
+export function goHomeError(error) {
     return {
-        type: 'UPDATE_WIREFRAME_NAME_ERROR',
+        type: 'GO_HOME_ERROR',
         error
     }
 }

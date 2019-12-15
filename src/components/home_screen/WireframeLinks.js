@@ -12,7 +12,7 @@ class WireframeLinks extends React.Component {
 
         const { props } = this;
         const { firebase, profile } = props;
-        const { wireframes } = this.props;
+        const { wireframes, history } = this.props;
         var index = 0;
         for (var i = 0; i < wireframes.length; i++)
         {
@@ -24,6 +24,7 @@ class WireframeLinks extends React.Component {
         
         wireframes.splice(index, 1);
         props.deleteWireframe(profile, wireframes, firebase);
+        history.push('/login');
     }
 
     render() {
