@@ -162,7 +162,7 @@ div.banner {
 
 .borderimg
 { 
-  border: 5px solid transparent;
+  border: 5px solid;
   padding: 0px;
   border-image: url('../css/images/border.png') 30 stretch;
 }

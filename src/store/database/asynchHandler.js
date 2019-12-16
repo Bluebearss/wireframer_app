@@ -28,7 +28,8 @@ export const registerHandler = (newUser, firebase) => (dispatch, getState, { get
         lastName: newUser.lastName,
         initials: `${newUser.firstName[0]}${newUser.lastName[0]}`,
         email: newUser.email,
-        isAdmin: true,
+        isAdmin: false,
+        wireframes: [],
     })).then(() => {
         dispatch(actionCreators.registerSuccess);
     }).catch((err) => {
@@ -41,11 +42,12 @@ export const newWireframeHandler = (profile, history, firebase) => (dispatch, ge
   fireStore.collection('users').doc(profile.uid).get().then(function(doc) {
     if (doc.exists) {
       var user_wireframes = doc.data().wireframes;
+      console.log(doc.data());
       var new_wireframe = {
         key: user_wireframes.length,
         name: "Unknown",
-        height: 1500,
-        width: 2250,
+        height: 5000,
+        width: 5000,
         created: new Date(),
         controls: []
       }

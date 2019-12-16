@@ -114,10 +114,16 @@ form button, form h5 {
   left: 80%;
 }
 
-.container_control_button, .label_control_button, .textfield_control_button
+.container_control_button, .label_control_button
 {
   background-color: white;
   border-style: none;
+}
+
+.textfield_control_button
+{
+  background-color: white;
+  border: 3px black solid;
 }
 
 .container_control_button

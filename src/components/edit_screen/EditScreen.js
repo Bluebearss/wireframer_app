@@ -109,7 +109,7 @@ class EditScreen extends Component {
             this.setState({dimensionsUpdated: true, changeMade: true});
         }
     }
-    /*
+
     zoomIn = () => {
         var canvas = document.getElementById("draw");
         var factor = 0;
@@ -137,7 +137,7 @@ class EditScreen extends Component {
           canvas.style.transform = "scale(" + this.state.zoom + ")";
         });
     }
-    */
+
     handleKeyPresses = (e) => {
         e.stopImmediatePropagation();
 
@@ -224,7 +224,7 @@ class EditScreen extends Component {
         switch(controlType) {
             case "button":
                 controlWidth = 100;
-                controlHeight = 10;
+                controlHeight = 50;
                 controlText = "Button";
                 break;
             case "textfield":
@@ -234,7 +234,7 @@ class EditScreen extends Component {
                 break;
             case "label":
                 controlWidth = 150;
-                controlHeight = 30;
+                controlHeight = 50;
                 controlText = "Label";
                 break;
             case "container":
@@ -256,9 +256,9 @@ class EditScreen extends Component {
                 text: controlText,
                 font_size: 14,
                 background_color: "#fff",
-                border_color: "#fff",
+                border_color: "#000",
                 text_color: "#000",
-                border_thickness: 1,
+                border_thickness: 3,
                 border_radius: 0,
         }
 
@@ -272,9 +272,9 @@ class EditScreen extends Component {
                 text: controlText,
                 font_size: 0,
                 background_color: "#fff",
-                border_color: "#fff",
+                border_color: "#000",
                 text_color: "#000",
-                border_thickness: 1,
+                border_thickness: 3,
                 border_radius: 0,
             }
         }

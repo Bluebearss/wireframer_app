@@ -11,8 +11,8 @@
                 {
                     "key": 0,
                     "name": "Family Feud Board Outline",
-                    "width": 2500,
-                    "height": 2500,
+                    "width": 5000,
+                    "height": 5000,
                     "created": "2019-11-26T03:05:44.327Z",
                     "controls": [
                         {
@@ -65,8 +65,8 @@
                 {
                     "key": 1,
                     "name": "Science Fair Project",
-                    "width": 1000,
-                    "height": 3000,
+                    "width": 5000,
+                    "height": 5000,
                     "created": "2018-08-23T03:05:44.327Z",
                     "controls": [
                         {
@@ -114,8 +114,8 @@
                 {
                     "key": 0,
                     "name": "Happy Painting For Kids",
-                    "width": 2250,
-                    "height": 1500,
+                    "width": 5000,
+                    "height": 5000,
                     "created": "2016-02-12T03:05:44.327Z",
                     "controls": [
                         {
@@ -169,7 +169,7 @@
                     "key": 1,
                     "name": "Camping at the Mountains Painting",
                     "width": 5000,
-                    "height": 3000,
+                    "height": 5000,
                     "created": "2018-11-03T03:05:44.327Z",
                     "controls": [
                         {

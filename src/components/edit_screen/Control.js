@@ -9,7 +9,7 @@ class Control extends Component {
             fontSize: this.props.control.font_size,
             color: this.props.control.text_color,
             backgroundColor: this.props.control.background_color,
-            border: String(this.props.control.border_thickness) + 'px solid',
+            border: String(this.props.control.border_thickness) + 'px solid black',
             borderColor: this.props.control.border_color,
             borderRadius: this.props.control.border_radius,
             display: 'inline-block',
@@ -45,7 +45,7 @@ class Control extends Component {
                         onDragStop={(e, d) => this.props.repositionControl(this.props.index, d.x, d.y)}
                         onResizeStop={(e, direction, ref, delta, position) => this.props.resizeControl(this.props.index, ref.style.width, ref.style.height)}
                     >
-                        <input type = "text" style={styleObject} defaultValue={this.props.control.text} ></input>
+                        <input type = "text" style={styleObject} value={this.props.control.text} ></input>
                     </Rnd>
                 );
             case "label":
@@ -73,7 +73,6 @@ class Control extends Component {
                         minWidth={20}
                         minHeight={20}
                         className = {this.props.control.className}
-                        style={{ borderStyle: 'solid', borderColor: 'black', borderRadius: '5px' }}
                         onClick={(event) => this.props.selectControl(event, this.props.index)}
                         onDragStop={(e, d) => this.props.repositionControl(this.props.index, d.x, d.y)}
                         onResizeStop={(e, direction, ref, delta, position) => this.props.resizeControl(this.props.index, ref.style.width, ref.style.height)}
